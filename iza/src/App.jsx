@@ -9,6 +9,7 @@ import LandingPageCarousel from "./components/landingpage_content/carousel/landi
 import PageFive from "./pages/pagefive/PageFive";
 
 import LandingPage from "./pages/LandingPageNew/LandingPage";
+import FrontPage from "./components/frontpage/FrontPage";
 
 const App = () => {
   return (
@@ -16,8 +17,8 @@ const App = () => {
       <div className="">
         <div className=" snap-y snap-mandator1 overflow-scroll h-[100vh] no-scrollbar">
           {/* <LandingPageCarousel /> */}
-          <LandingPage />
-
+          {/* <LandingPage /> */}
+          <FrontPage />
           <FirstPage />
           <SecondPage />
           <ThirdPage />

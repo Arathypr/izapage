@@ -1,119 +1,246 @@
-figure {
+/* figure {
   margin: 0;
+  padding: 0;
   position: relative;
   perspective: 1800px;
   transform-style: preserve-3d;
-  max-width: 1000px;
-  padding-bottom: 56.25%;
-}
+  width: 100%;
+  height: 100vh;
 
+  background-color: rgb(74, 134, 134);
+}
 figure img {
   top: 0;
   left: 0;
   position: absolute;
   transition: 1s;
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-
 figure img.first {
   transform: rotateY(0deg);
 }
-
 figure img.second {
   transform: rotateY(-180deg) translateZ(1px);
 }
-
-figure img.third {
-  transform: rotateY(-360deg) translateZ(2px);
-}
-
 figure:hover img.first {
   transform: rotateY(180deg);
 }
-
 figure:hover img.second {
   transform: rotateY(0deg) translateZ(1px);
 }
-
-figure:hover img.third {
-  transform: rotateY(180deg) translateZ(2px);
-}
-
 figure img:nth-child(1),
-figure img:nth-child(11),
-figure img:nth-child(21) {
+figure img:nth-child(11) {
   clip: rect(0px, 100px, 840px, 0px);
-  transform-origin: 60px 0px;
+  transform-origin: 50px 0px;
 }
-
 figure img:nth-child(2),
-figure img:nth-child(12),
-figure img:nth-child(22) {
+figure img:nth-child(12) {
   clip: rect(0px, 200px, 840px, 100px);
   transform-origin: 150px 0px;
   transition-delay: 100ms;
 }
-
 figure img:nth-child(3),
-figure img:nth-child(13),
-figure img:nth-child(23) {
+figure img:nth-child(13) {
   clip: rect(0px, 300px, 840px, 200px);
   transform-origin: 250px 0px;
   transition-delay: 200ms;
 }
-
 figure img:nth-child(4),
-figure img:nth-child(14),
-figure img:nth-child(24) {
+figure img:nth-child(14) {
   clip: rect(0px, 400px, 840px, 300px);
   transform-origin: 350px 0px;
   transition-delay: 300ms;
 }
-
 figure img:nth-child(5),
-figure img:nth-child(15),
-figure img:nth-child(25) {
+figure img:nth-child(15) {
   clip: rect(0px, 500px, 840px, 400px);
   transform-origin: 450px 0px;
   transition-delay: 400ms;
 }
-
 figure img:nth-child(6),
-figure img:nth-child(16),
-figure img:nth-child(26) {
+figure img:nth-child(16) {
   clip: rect(0px, 600px, 840px, 500px);
   transform-origin: 550px 0px;
   transition-delay: 500ms;
 }
-
 figure img:nth-child(7),
-figure img:nth-child(17),
-figure img:nth-child(27) {
+figure img:nth-child(17) {
   clip: rect(0px, 700px, 840px, 600px);
   transform-origin: 650px 0px;
   transition-delay: 600ms;
 }
-
 figure img:nth-child(8),
-figure img:nth-child(18),
-figure img:nth-child(28) {
+figure img:nth-child(18) {
   clip: rect(0px, 800px, 840px, 700px);
   transform-origin: 750px 0px;
   transition-delay: 700ms;
 }
-
 figure img:nth-child(9),
-figure img:nth-child(19),
-figure img:nth-child(29) {
+figure img:nth-child(19) {
   clip: rect(0px, 900px, 840px, 800px);
   transform-origin: 850px 0px;
   transition-delay: 800ms;
 }
-
 figure img:nth-child(10),
-figure img:nth-child(20),
-figure img:nth-child(30) {
+figure img:nth-child(20) {
   clip: rect(0px, 1000px, 840px, 900px);
   transform-origin: 950px 0px;
   transition-delay: 900ms;
 }
+
+figure.clicked img.first {
+  transform: rotateY(180deg);
+}
+
+figure.clicked img.second {
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+figure.clicked img.third {
+  transform: rotateY(180deg) translateZ(2px);
+} */
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.blinds-window {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  perspective: 1800px;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.blinds-window img {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: 1s;
+  width: 100%;
+  height: 100%;
+}
+
+.blinds-window.clicked img.first {
+  transform: rotateY(180deg);
+}
+
+.blinds-window.clicked img.second {
+  transform: rotateY(0deg) translateZ(1px);
+}
+#blinds-window {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  perspective: 1800px;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#blinds-window img {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: 1s;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#blinds-window img.first {
+  transform: rotateY(0deg);
+}
+
+#blinds-window img.second {
+  transform: rotateY(-180deg) translateZ(1px);
+}
+
+#blinds-window img:nth-child(1),
+#blinds-window img:nth-child(11) {
+  clip-path: polygon(0 0, 100px 0, 100px 100%, 0 100%);
+  transform-origin: 50px 0px;
+}
+
+#blinds-window img:nth-child(2),
+#blinds-window img:nth-child(12) {
+  clip-path: polygon(0 0, 200px 0, 200px 100%, 0 100%);
+  transform-origin: 150px 0px;
+  transition-delay: 100ms;
+}
+
+#blinds-window img:nth-child(3),
+#blinds-window img:nth-child(13) {
+  clip-path: polygon(0 0, 300px 0, 300px 100%, 0 100%);
+  transform-origin: 250px 0px;
+  transition-delay: 200ms;
+}
+
+#blinds-window img:nth-child(4),
+#blinds-window img:nth-child(14) {
+  clip-path: polygon(0 0, 400px 0, 400px 100%, 0 100%);
+  transform-origin: 350px 0px;
+  transition-delay: 300ms;
+}
+
+#blinds-window img:nth-child(5),
+#blinds-window img:nth-child(15) {
+  clip-path: polygon(0 0, 500px 0, 500px 100%, 0 100%);
+  transform-origin: 450px 0px;
+  transition-delay: 400ms;
+}
+
+#blinds-window img:nth-child(6),
+#blinds-window img:nth-child(16) {
+  clip-path: polygon(0 0, 600px 0, 600px 100%, 0 100%);
+  transform-origin: 550px 0px;
+  transition-delay: 500ms;
+}
+
+#blinds-window img:nth-child(7),
+#blinds-window img:nth-child(17) {
+  clip-path: polygon(0 0, 700px 0, 700px 100%, 0 100%);
+  transform-origin: 650px 0px;
+  transition-delay: 600ms;
+}
+
+#blinds-window img:nth-child(8),
+#blinds-window img:nth-child(18) {
+  clip-path: polygon(0 0, 800px 0, 800px 100%, 0 100%);
+  transform-origin: 750px 0px;
+  transition-delay: 700ms;
+}
+
+#blinds-window img:nth-child(9),
+#blinds-window img:nth-child(19) {
+  clip-path: polygon(0 0, 900px 0, 900px 100%, 0 100%);
+  transform-origin: 850px 0px;
+  transition-delay: 800ms;
+}
+
+#blinds-window img:nth-child(10),
+#blinds-window img:nth-child(20) {
+  clip-path: polygon(0 0, 1000px 0, 1000px 100%, 0 100%);
+  transform-origin: 950px 0px;
+  transition-delay: 900ms;
+}
+
+#blinds-window.clicked img.first {
+  transform: rotateY(180deg);
+}
+
+#blinds-window.clicked img.second {
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+#blinds-window.clicked img.third {
+  transform: rotateY(180deg) translateZ(2px);
+}
+ 
